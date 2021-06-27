@@ -1,4 +1,7 @@
-﻿# Instant Code Lab
+﻿
+ ![Logo](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/logo.jpg)
+
+ # Instant Code Lab
  
 
 This project is made with the goal to provide with the advancement of e-learning. The major problem that the education system facing nowadays is to provide practical knowledge with e-learning.
@@ -69,4 +72,24 @@ To run this project, you will need to add the following environment variables to
 
 - Open any web browser and then paste the server address to see the webpage working on your local machine
 
+## Screenshots
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/1.png)
+
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/2.png)
+
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/3.png)
+
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/4.png)
+
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/5.png)
+
+
+![App Screenshot](https://github.com/Veeresh-Rex/instantcodelab/blob/master/Screenshots/6.png)
+
 - Happy Coding 😁
+
