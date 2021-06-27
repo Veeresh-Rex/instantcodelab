@@ -33,7 +33,7 @@ document.getElementById('createform').addEventListener('submit', (e) => {
           <div class="px-8 pt-10 pb-4">
               <div class="flex flex-col">
                   <h4 class="text-primary-dark">The link to your room is</h4>
-                  <div class="flex w-full"><input type="text" name="link" id="link" class="link w-full link-hover py-2 my-3 border px-4 rounded-pill" readonly="" value="http://localhost:5000/room/join/${roomid}">
+                  <div class="flex w-full"><input type="text" name="link" id="link" class="link w-full link-hover py-2 my-3 border px-4 rounded-pill" readonly="" value="https://instantcodelabb.herokuapp.com/room/join/${roomid}">
                   </div>
                   <button class="btn modal-btn" onclick="copy()">Copy Link</button>
               </div>
@@ -48,7 +48,7 @@ document.getElementById('createform').addEventListener('submit', (e) => {
                   <div class="flex w-full">
 
                   </div>
-                  <a href="http://localhost:5000/admin/${roomid}/${adminCode}"> <button class="btn modal-btn" >Go to Admin Panel</button></a>
+                  <a href="https://instantcodelabb.herokuapp.com/admin/${roomid}/${adminCode}"> <button class="btn modal-btn" >Go to Admin Panel</button></a>
               </div>
           </div>
       </div>
