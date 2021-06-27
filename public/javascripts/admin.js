@@ -2,30 +2,36 @@ let socket = io();
 let userlist = document.getElementById('userlist');
 const deleteroom = document.getElementById('deleteroom');
 let userCurrent;
-// Delete button to delete a rooom
-// textinput.value = '';
 
 // Editor Setup
 
 let isUserChnage;
 
 const textinput = document.getElementById('code');
+let mode;
+
+if (languageid == 62) {
+  mode = 'text/x-java';
+} else if (languageid == 54) {
+  mode = 'text/x-c++src';
+} else if (languageid == 49) {
+  mode = 'text/x-csrc';
+} else {
+  mode = 'text/x-python';
+}
 var editor = CodeMirror.fromTextArea(textinput, {
   lineNumbers: true,
   tabSize: 2,
   lineWrapping: true,
+  indentUnit: 4,
   foldGutter: true,
   autoCloseBrackets: true,
   gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
   matchBrackets: true,
-  mode: 'text/x-c++src',
-  mode: 'text/x-java',
-  mode: 'text/x-csrc',
-  mode: 'text/x-python',
+  mode: mode,
   theme: 'dracula',
 });
 
-editor.setSize('720px', '630px'); //Set the length and width of the code box
 if (languageid == 62) {
   editor.setValue(`public class Main {
     public static void main(String[] args) {
@@ -55,6 +61,10 @@ if (languageid == 71) {
   //Your code goes here
 `);
 }
+
+editor.setSize('720px', '630px'); //Set the length and width of the code box
+
+//delete button room
 let id = window.location.toString().split('admin/')[1].split('/')[0];
 deleteroom.addEventListener('click', function () {
   axios
