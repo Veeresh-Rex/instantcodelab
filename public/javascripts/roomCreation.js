@@ -16,17 +16,25 @@ document.getElementById('createform').addEventListener('submit', (e) => {
   const labname = document.getElementById('labname').value;
   const by = document.getElementById('createdby').value;
   const password = document.getElementById('password').value;
+  const language = document.getElementById('language').value;
 
   axios
     .post('/api/v1/create', {
       password,
       by,
       labname,
+      language,
     })
     .then((res) => {
       //console.log(res.data);
       adminCode = res.data.admincode;
       roomid = res.data.id;
+      document
+        .getElementById('linkmodal')
+        .querySelectorAll('.modal-container')
+        .forEach((ele) => {
+          ele.remove();
+        });
 
       let html = ` <div id="modal-div" class=" hide modal-container py-20">
       <div class="modal-wrapper flex flex-col max-w-3xl mx-auto rounded-lg shadow-lg">

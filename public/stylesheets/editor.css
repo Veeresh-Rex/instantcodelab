@@ -15,6 +15,7 @@ body {
     align-items: center;
     color: var(--text);
     height: 100%;
+    /* overflow: hidden; */
 }
 
 html {
@@ -27,6 +28,7 @@ html {
     width: 100%;
     height: 100%;
     background-color: var(--bg);
+    overflow: hidden;
 }
 
 .title {
@@ -83,10 +85,16 @@ html {
     border: 2px solid var(--border);
     margin: 2px;
     width: 65%;
+    height: 100%;
+}
+
+#code {
+    width: 50%;
+    height: 20%;
 }
 
 .stu-editor {
-    width: 70%;
+    width: 90%;
 }
 
 .ide-functions {

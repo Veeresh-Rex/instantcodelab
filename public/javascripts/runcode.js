@@ -16,7 +16,7 @@ document.getElementById('runcode').addEventListener('click', () => {
           accept: 'application/json',
         },
         body: JSON.stringify({
-          language_id: 52,
+          language_id: languageid,
           source_code: code,
           stdin: x,
         }),

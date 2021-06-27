@@ -2,30 +2,69 @@ let socket = io();
 let userlist = document.getElementById('userlist');
 const deleteroom = document.getElementById('deleteroom');
 let userCurrent;
-// Delete button to delete a rooom
-// textinput.value = '';
 
 // Editor Setup
 
 let isUserChnage;
 
 const textinput = document.getElementById('code');
+let mode;
+
+if (languageid == 62) {
+  mode = 'text/x-java';
+} else if (languageid == 54) {
+  mode = 'text/x-c++src';
+} else if (languageid == 49) {
+  mode = 'text/x-csrc';
+} else {
+  mode = 'text/x-python';
+}
 var editor = CodeMirror.fromTextArea(textinput, {
   lineNumbers: true,
   tabSize: 2,
   lineWrapping: true,
+  indentUnit: 4,
   foldGutter: true,
   autoCloseBrackets: true,
   gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
-  matchBrackets: true, //Bracket matching
-  mode: 'text/x-python',
-  mode: 'text/x-java',
-  mode: 'text/x-c++src',
+  matchBrackets: true,
+  mode: mode,
   theme: 'dracula',
 });
 
+if (languageid == 62) {
+  editor.setValue(`public class Main {
+    public static void main(String[] args) {
+        //Your code goes here
+    }
+}
+`);
+}
+if (languageid == 54) {
+  editor.setValue(`#include <iostream>
+using namespace std;
+int main() {
+      // Your code goes here
+}
+`);
+}
+if (languageid == 49) {
+  editor.setValue(`#include <stdio.h>
+int main() {
+    // Your code goes here
+    return 0;
+}
+`);
+}
+if (languageid == 71) {
+  editor.setValue(`#Python(3.8.1)...
+#Your code goes here
+`);
+}
+
 editor.setSize('720px', '630px'); //Set the length and width of the code box
 
+//delete button room
 let id = window.location.toString().split('admin/')[1].split('/')[0];
 deleteroom.addEventListener('click', function () {
   axios

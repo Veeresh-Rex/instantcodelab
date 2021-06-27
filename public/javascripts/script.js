@@ -3,6 +3,18 @@ let changeEvent;
 
 // Editor Setup
 const textinput = document.getElementById('code');
+
+let mode;
+
+if (languageid == 62) {
+  mode = 'text/x-java';
+} else if (languageid == 54) {
+  mode = 'text/x-c++src';
+} else if (languageid == 49) {
+  mode = 'text/x-csrc';
+} else {
+  mode = 'text/x-python';
+}
 var editor = CodeMirror.fromTextArea(textinput, {
   lineNumbers: true,
   tabSize: 2,
@@ -12,14 +24,44 @@ var editor = CodeMirror.fromTextArea(textinput, {
   autoCloseBrackets: true,
   gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
   matchBrackets: true,
-  mode: 'text/x-c++src',
+  mode: mode,
   theme: 'dracula',
 });
+
+if (languageid == 62) {
+  editor.setValue(`public class Main {
+    public static void main(String[] args) {
+        //Your code goes here
+    }
+}
+`);
+}
+if (languageid == 54) {
+  editor.setValue(`#include <iostream>
+using namespace std;
+int main() {
+      // Your code goes here
+}
+`);
+}
+if (languageid == 49) {
+  editor.setValue(`#include <stdio.h>
+int main() {
+    // Your code goes here
+    return 0;
+}
+`);
+}
+if (languageid == 71) {
+  editor.setValue(`#Python(3.8.1)...
+#Your code goes here
+`);
+}
+
 editor.setSize('915px', '630px'); //Set the length and width of the code box
 
 // Leave Room
 document.getElementById('leaveroom').addEventListener('click', function () {
-  // document.cookie = 'jwt=e; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   window.location.replace('/');
 });
 let username = localStorage.getItem(

@@ -21,6 +21,7 @@ router.get('/admin/:roomId/:admincode', (req, res) => {
         menuId: 'home',
         labname: room.labname,
         createdby: room.createdBy,
+        language: room.languageId,
       });
     else {
       res.render('404');
