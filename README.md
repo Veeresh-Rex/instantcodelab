@@ -28,6 +28,17 @@ https://www.youtube.com/watch?v=YHJYcyeDrUs
 
 **Server:** Node, Express, MongoDB, Socket.io
 
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`PORT`
+
+`MONGO_DB_URI`
+
+`JWT_SECRET`
+
   
 ## Run Locally
 - Fork the repository
