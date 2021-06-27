@@ -80,6 +80,7 @@ router.post('/create', (req, res) => {
       password: hash,
       createdBy: req.body.by,
       adminCode: admincode,
+      languageId: req.body.language,
     };
     let createRoom = new roomModal(Data);
 

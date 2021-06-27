@@ -146,7 +146,8 @@ form {
     color: #38d39f;
 }
 
-.input-div>div>input {
+.input-div>div>input,
+.select {
     position: absolute;
     left: 0;
     top: 0;
@@ -176,6 +177,11 @@ a {
 
 a:hover {
     color: #38d39f;
+}
+
+.select {
+    background-color: rgb(63, 103, 214);
+    margin-left: 10px;
 }
 
 .btns {

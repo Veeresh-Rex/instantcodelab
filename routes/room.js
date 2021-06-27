@@ -29,21 +29,21 @@ function verifyroom(req, res, next) {
 }
 
 router.get('/joined/:roomId', queryCheck, verifyroom, (req, res) => {
-  console.log(req.users);
   if (req.user.id === req.params.roomId)
     res.render('room', {
       title: 'Room',
       username: req.user.username,
-      page: 'stu',
+      page: 'student',
       menuId: 'home',
       labname: req.users.labname,
       by: req.users.createdBy,
+      language: req.users.languageId,
     });
   else res.redirect(`/room/join/${req.params.roomId}`);
 });
 
 router.get('/join/:roomId', verifyroom, (req, res) => {
-  res.render('joinroom', { title: 'Room', page: 'Create', menuId: 'home' });
+  res.render('joinroom', { page: 'Join', menuId: 'home' });
 });
 
 module.exports = router;
