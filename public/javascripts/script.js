@@ -13,10 +13,41 @@ var editor = CodeMirror.fromTextArea(textinput, {
   gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
   matchBrackets: true,
   mode: 'text/x-c++src',
+  mode: 'text/x-java',
+  mode: 'text/x-csrc',
+  mode: 'text/x-python',
   theme: 'dracula',
 });
 editor.setSize('915px', '630px'); //Set the length and width of the code box
-
+if (languageid == 62) {
+  editor.setValue(`public class Main {
+    public static void main(String[] args) {
+        //Your code goes here
+    }
+}
+`);
+}
+if (languageid == 54) {
+  editor.setValue(`#include <iostream>
+using namespace std;
+int main() {
+      // Your code goes here
+}
+`);
+}
+if (languageid == 49) {
+  editor.setValue(`#include <stdio.h>
+int main() {
+    // Your code goes here
+    return 0;
+}
+`);
+}
+if (languageid == 71) {
+  editor.setValue(`#Python(3.8.1)...
+  //Your code goes here
+`);
+}
 // Leave Room
 document.getElementById('leaveroom').addEventListener('click', function () {
   // document.cookie = 'jwt=e; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
