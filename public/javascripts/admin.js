@@ -58,7 +58,7 @@ int main() {
 }
 if (languageid == 71) {
   editor.setValue(`#Python(3.8.1)...
-  //Your code goes here
+#Your code goes here
 `);
 }
 
