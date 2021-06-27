@@ -1,6 +1,5 @@
 ﻿# Instant Code Lab
  
-# Project Title
 
 This project is made with the goal to provide with the advancement of e-learning. The major problem that the education system facing nowadays is to provide practical knowledge with e-learning.
 Our project is a real Time interactive web based code lab, which is much needed in this pandemic time where everything has been pushed online even education. 
