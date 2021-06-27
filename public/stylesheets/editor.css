@@ -1,0 +1,204 @@
+:root {
+    --border: #e8e8eb;
+    --bg: #f0f0f0;
+    --text: rgb(14, 13, 13);
+}
+
+* {
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.wrapper {
+    font-size: 35px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    background-color: var(--bg);
+    width: 100%;
+    color: var(--text);
+    border: 2px solid var(--border);
+    font-size: 1.5rem;
+    padding: 3px;
+}
+
+.ide-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.ide-head {
+    width: 90%;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.ide-layout {
+    display: flex;
+    border: 2px solid var(--border);
+    height: 100%;
+    width: 100%;
+}
+
+.ide-main {
+    display: flex;
+    border: 2px solid var(--border);
+    height: 520px;
+    width: 85%;
+}
+
+.student-list {
+    border: 2px solid var(--border);
+    margin: 2px;
+    width: 15%;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+.editor {
+    border: 2px solid var(--border);
+    margin: 2px;
+    width: 65%;
+}
+
+.stu-editor {
+    width: 70%;
+}
+
+.ide-functions {
+    border: 2px solid var(--border);
+    margin: 2px;
+    width: 35%;
+}
+
+.vids {
+    width: 15%;
+    border: 2px solid var(--border);
+}
+
+.stu-functions {
+    width: 30%;
+}
+
+.stu-list {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: aliceblue;
+    color: lawngreen;
+}
+
+.io-func {
+    /* display: flex; */
+    height: 90%;
+}
+
+.input-title,
+.output-title,
+.stu-title {
+    background-color: #e8e8eb;
+}
+
+.input {
+    /* border: 2px solid blue; */
+    height: 30%;
+    margin: 2px;
+}
+
+.inputs {
+    width: 100%;
+    height: 85%;
+    background-color: var(--bg);
+    border: none;
+    resize: none;
+}
+
+.output {
+    height: 70%;
+    overflow: scroll;
+    margin: 2px;
+}
+
+.btn {
+    display: block;
+    width: 50%;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.stu-btns {
+    display: flex;
+}
+
+.stu-btn {
+    width: 40%;
+    /* height: 40px; */
+}
+
+.modal-btn {
+    width: 40%;
+    height: 20%;
+    font-size: 0.8rem;
+}
+
+.btn:hover {
+    background-position: right;
+}
+
+.lab-name {
+    width: 90%;
+    text-align: left;
+}
+
+.stu-lab-name {
+    width: 50%;
+}
+
+.by {
+    width: 50%;
+    text-align: left;
+}
+
+.dlt-room {
+    font-size: 0.8rem;
+    width: 10%;
+    position: relative;
+    right: 0;
+}

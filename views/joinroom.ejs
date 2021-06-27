@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <img class="wave" src="/images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="/images/bg.svg">
+        </div>
+        <div class="login-content">
+            <form id='joinroom' method="post">
+                <img src="/images/avatar.svg">
+                <h2 class="title">Join the Room</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <!-- <h5>Room name</h5> -->
+                        <input type="text" class="input" placeholder="Your Name" id="username" value='' required>
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <input type="password" class="input" placeholder="Enter Room Password" id='password' ,value='password' required>
+                    </div>
+                </div>
+                <!-- <a href="#">Create Room</a> -->
+                <button class="btn" type="Submit" id='subBtn'>Join Room</button>
+            </form>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+            <script src="/javascripts/tata.js"></script>
+            <script src="/javascripts/joinroom.js"></script>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/idehead %>
+        <link rel="stylesheet" href="/stylesheets/codemirror.css">
+        <link rel="stylesheet" href="/stylesheets/dracula.css">
+        <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <%= username %>
+        </div>
+        <div class="ide-wrapper">
+            <div class="ide-head">
+                <div class="stu-lab-name lab-name" id='labname'>
+                    Labname:
+                    <%= labname %>
+                </div>
+                <div class="by" id='by'>By:
+                    <%= by %><span></span>
+                </div>
+                <button class="dlt-room btn" id='leaveroom'>Leave Room</button>
+            </div>
+            <div class="ide-layout">
+
+                <div class="ide-main">
+                    <div class="editor stu-editor">
+                        <!-- Editor setup -->
+                        <textarea id="code" name="code" value=''></textarea>
+
+                    </div>
+                    <div class="ide-functions stu-functions">
+                        <div class="io-func">
+                            <div class="input">
+                                <!-- --inputs-- -->
+                                <h4 class="input-title">Input</h4>
+                                <textarea type="text" class="inputs" id='codeinput' value=''></textarea>
+                            </div>
+                            <hr>
+                            <div class="output">
+                                <h4 class="output-title">Output</h4>
+                                <!-- --output-- -->
+                                <div id="output"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="stu-btns run-submit">
+                            <button class="stu-btn run btn" id='runcode'>Run</button>
+                            <button class="stu-btn submit btn" id="submitcode">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="vids">
+                    ---video call here-- Underconstruction
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/javascripts/codemirrorlib/codemirror.min.js">
+    </script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/closebrackets.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/python.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/brace-fold.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/clike.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/foldcode.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/foldgutter.min.js"></script>
+    <script type="text/javascript" src="/javascripts/codemirrorlib/matchbracket.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script type="text/javascript" src="/javascripts/tata.js"></script>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+    <script type="text/javascript" src="/javascripts/runcode.js"></script>
+</body>
+
+</html>

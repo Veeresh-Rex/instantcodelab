@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <img class="wave" src="/images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="/images/bg.svg">
+        </div>
+        <div class="login-content">
+            <form id='createform'>
+                <img src="/images/avatar.svg">
+                <h2 class="title">Fill the details</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <!-- <i class="fas fa-user"></i> -->
+                    </div>
+                    <div class="div">
+                        <!-- <h5>Room name</h5> -->
+                        <input required type="text" class="input" placeholder="Lab Name" value='' id='labname'>
+                    </div>
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                    </div>
+                    <div class="div">
+                        <input required type="text" class="input" placeholder="User name" value="" id='createdby'>
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                    </div>
+                    <div class="div">
+                        <input required type="password" class="input" placeholder="Enter Password" value="" id='password'>
+                    </div>
+                </div>
+                <!-- <a href="#">Create Room</a> -->
+                <button class="btn" type="submit" id='generatelink'>Get Link</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8 mx-auto" id='linkmodal'>
+
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/tata.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="/javascripts/roomCreation.js"></script>
+</body>
