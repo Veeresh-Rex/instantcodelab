@@ -33,7 +33,6 @@ html {
 
 .title {
     display: flex;
-    justify-content: center;
     align-self: flex-start;
     background-color: var(--bg);
     width: 100%;
@@ -41,6 +40,13 @@ html {
     border: 2px solid var(--border);
     font-size: 1.5rem;
     padding: 3px;
+}
+
+
+.proj-title,.room-own {
+    font-size: 1.5rem;
+    padding-right: 250px;
+    padding-left: 60px;
 }
 
 .ide-wrapper {
@@ -70,13 +76,13 @@ html {
     display: flex;
     border: 2px solid var(--border);
     height: 520px;
-    width: 85%;
+    width: 100%;
 }
 
 .student-list {
     border: 2px solid var(--border);
     margin: 2px;
-    width: 15%;
+    width: 20%;
     padding: 0;
     overflow-y: scroll;
 }
@@ -101,11 +107,6 @@ html {
     border: 2px solid var(--border);
     margin: 2px;
     width: 35%;
-}
-
-.vids {
-    width: 15%;
-    border: 2px solid var(--border);
 }
 
 .stu-functions {
