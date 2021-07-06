@@ -163,8 +163,7 @@ form {
     background: none;
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
-	color: rgb(160, 150, 150);
-    color: #555;
+    color: rgb(160, 150, 150);
     font-family: 'poppins', sans-serif;
 }
 
@@ -187,6 +186,7 @@ a:hover {
 
 .select {
     background-color: rgb(63, 103, 214);
+    color: #fff;
     margin-left: 10px;
 }
 
