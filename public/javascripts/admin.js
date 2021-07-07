@@ -62,7 +62,7 @@ if (languageid == 71) {
 `);
 }
 
-editor.setSize('720px', '630px'); //Set the length and width of the code box
+editor.setSize('820px', '630px'); //Set the length and width of the code box
 
 //delete button room
 let id = window.location.toString().split('admin/')[1].split('/')[0];
