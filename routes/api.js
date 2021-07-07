@@ -129,7 +129,7 @@ router.post('/submitcode', (req, res) => {
     });
 });
 
-// Generate Report
+// Generate Report code
 
 router.post('/getcode', (req, res) => {
   console.log(req.body.roomId);
