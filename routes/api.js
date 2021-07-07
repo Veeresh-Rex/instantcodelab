@@ -5,8 +5,21 @@ var router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+
+function verifyroom(req, res, next) {
+  roomModal.findById(req.body.id, function (err, roomdata) {
+    if (!roomdata) {
+      console.log('No room found');
+      res.render('404');
+    } else {
+      req.users = roomdata;
+      next();
+    }
+  });
+}
+
 // join room
-router.post('/joinroom', (req, res) => {
+router.post('/joinroom', verifyroom, (req, res) => {
   const password = req.body.password;
   const id = req.body.id;
   const username = req.body.username;
