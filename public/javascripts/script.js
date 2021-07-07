@@ -58,7 +58,7 @@ if (languageid == 71) {
 `);
 }
 
-editor.setSize('915px', '630px'); //Set the length and width of the code box
+editor.setSize('950px', '630px'); //Set the length and width of the code box
 
 // Leave Room
 document.getElementById('leaveroom').addEventListener('click', function () {

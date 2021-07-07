@@ -43,22 +43,36 @@ router.post('/joinroom', (req, res) => {
 
 // Delete any room
 router.post('/deleteroom', (req, res) => {
-  roomModal.deleteOne({ _id: req.body.id }, (err) => {
-    if (!err)
-      return res.json({
-        status: 400,
-        ok: true,
-        data: {
-          msg: 'delete successfully',
-        },
+  userModal.deleteMany({ roomId: req.body.id }, (err) => {
+    if (!err) {
+      roomModal.deleteOne({ _id: req.body.id }, (err) => {
+        if (!err)
+          return res.json({
+            status: 200,
+            ok: true,
+            data: {
+              msg: 'delete successfully',
+            },
+          });
+        return res.json({
+          status: 400,
+          ok: true,
+          data: {
+            msg: 'Deleteing room error',
+          },
+        });
       });
-    res.json({
-      status: 401,
-      ok: true,
-      data: {
-        msg: 'Deleteing room error',
-      },
-    });
+    } else {
+      console.log('Error in room delete');
+      console.log(err);
+    }
+    // return res.json({
+    //   status: 400,
+    //   ok: true,
+    //   data: {
+    //     msg: 'Deleteing room error',
+    //   },
+    // });
   });
 });
 // create room
@@ -133,7 +147,6 @@ router.post('/getcode', (req, res) => {
     else {
       return res.json({
         status: 401,
-
         data: {
           msg: 'Some Error Occured',
         },

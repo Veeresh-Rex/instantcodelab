@@ -12,8 +12,20 @@ router.get('/', function (req, res, next) {
 router.get('/create', (req, res) => {
   res.render('create', { page: 'Create', menuId: 'home' });
 });
+function verifyroom(req, res, next) {
+  roomModal.findById(req.params.roomId, function (err, roomdata) {
+    if (!roomdata) {
+      console.log('No room found');
+      res.render('404');
+    } else {
+      req.users = roomdata;
+      next();
+    }
+  });
+}
 
-router.get('/admin/:roomId/:admincode', (req, res) => {
+router.get('/admin/:roomId/:admincode', verifyroom, (req, res) => {
+  console.log(req.params.admincode);
   roomModal.findById(req.params.roomId, (err, room) => {
     if (req.params.admincode === room.adminCode)
       return res.render('adminpanal', {
@@ -30,9 +42,13 @@ router.get('/admin/:roomId/:admincode', (req, res) => {
 });
 function verifyAdmin(req, res, next) {
   roomModal.findById(req.params.roomId, (err, room) => {
-    if (req.params.admincode === room.adminCode) {
-      req.labname = room.labname;
-      next();
+    if (room) {
+      if (req.params.admincode === room.adminCode) {
+        req.labname = room.labname;
+        next();
+      } else {
+        res.render('404');
+      }
     } else {
       res.render('404');
     }

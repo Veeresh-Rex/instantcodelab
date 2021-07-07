@@ -72,7 +72,7 @@ deleteroom.addEventListener('click', function () {
       id,
     })
     .then((res) => {
-      if (res.data.status === 400) {
+      if (res.data.status === 200) {
         tata.info('Room deleted', 'You deleted the room', {
           animate: 'fade',
           position: 'tm',

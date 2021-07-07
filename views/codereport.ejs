@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="/stylesheets/dracula.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <style>
+        .CodeMirror {
+            border: 1px solid #eee;
+            height: auto;
+        }
+    </style>
     <title>Code Report!</title>
 </head>
 
@@ -17,21 +22,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
             <div class="collapse navbar-collapse d-flex mx-auto" id="navbarSupportedContent">
 
                 <button id='pdf' type="button" class="btn btn-primary m-2">Download PDF</button>
-                <button type="button" class="btn btn-danger">Delete Room</button>
-
+                <button type="button" class="btn btn-danger" id='deleteroom'>Delete Room</button>
             </div>
+
+            <h2> Download Your Student's Code</h2>
         </div>
     </nav>
     <div class="container-fluid" id='headcode'>
 
 
-        <p class="fs-4 fw-bold text-center">
+        <p class="fs-4 fw-bold text-center mt-2">
             Labname:
             <%= labname %>
         </p>
@@ -43,7 +47,7 @@
 
 
 
-
+    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/javascripts/codemirrorlib/codemirror.min.js"></script>
@@ -70,19 +74,21 @@
                 </div>
             </div>
             <div id='wpcode' class="col-10 mx-auto">
-                <textarea id=${all[x].username} name="code"></textarea>
+                <textarea id=${all[x].username} name="code" class="CodeMirror" style={  border: 1px solid #eee;
+  height: auto;}></textarea>
             </div>
             `;
                             document.getElementById('alldata').insertAdjacentHTML('beforeend', html)
                             const textinput = document.getElementById(`${all[x].username}`);
                             let editor = CodeMirror.fromTextArea(textinput, {
                                 lineNumbers: true,
+                                lineWrapping: true,
                                 tabSize: 2,
                                 readOnly: true,
                                 mode: 'text/x-c++src',
                                 theme: 'dracula',
                             });
-                            editor.setSize('1200px', '600px');
+                            editor.setSize('900px');
                             editor.setValue(all[x].code)
                         }
                     } else {
@@ -112,6 +118,8 @@
         })
     </script>
 
+    <script src="/javascripts/tata.js"></script>
+    <script src="/javascripts/codereport.js"></script>
 </body>
 
 </html>
